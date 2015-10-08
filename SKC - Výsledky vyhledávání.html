@@ -1,0 +1,571 @@
+<!-- filename: short-2-head  -->
+<html><head> 
+<!-- filename: meta-tags --> 
+ 
+<meta name="viewport" content="user-scalable=yes"> 
+<meta name="format-detection" content="telephone=no"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Expires" content="Sun, 06 Nov 1994 08:49:37 GMT"> 
+<meta http-equiv="Refresh" content="1800; URL=http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05894?func=logout"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Content-Script-Type" content="text/javascript"> 
+ 
+<link rel="stylesheet" href="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/aleph.css" type="text/css"> 
+<!--link rel="stylesheet" media="only screen and (min-width: 1500px)" href="http://aleph.nkp.cz/aleph-max.css" TYPE="text/css"--> 
+ 
+<script type="text/javascript"> 
+<!-- 
+var bas = "SKC".substring(0,3); 
+if ( document.cookie.match(/_type=mobil/i) || 
+   ( document.cookie.match(/_type=stand/i) == null && navigator.userAgent.match(/Android|Bada|BlackBerry|iP(hone|ad|od)|Mobile|Phone|Palm|webOS/i) )) { 
+//  loc = this.location.href.replace(/^[^?]*/,"").replace(/\&*local_base=[^&]*/gi,""); 
+  loc = this.location.href.replace(/^[^?]*\?(local_base=[^&]*\&*)?/,"?").replace(/\&local_base=[^&]*/gi,""); 
+  if ( loc.match(/func=(bor-info|find-[a-c]|direct)/i) ) 
+    this.location.replace('http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05895' + loc + '&local_base=MOBIL-' + bas); 
+  else 
+    this.location.replace('http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05896?func=file&file_name=base-list&local_base=MOBIL-NKC'); } 
+// --> 
+</script> 
+ 
+ 
+<title>SKC - Výsledky vyhledávání</title> 
+ 
+<script language="Javascript"> 
+<!-- 
+var mode = 0; 
+function set_mode() { 
+  if ( this.innerHTML.match("service_type=TAG") ) mode = 1; else mode = 0; 
+} 
+function open_window(loc) { 
+  self.name="main"; 
+  if ( mode == 1 ) 
+    var w = window.open(loc,"win1","height=500,width=500,scrollbars,resizable"); 
+  else 
+    var w = window.open(loc); 
+  w.focus(); 
+} 
+function open_window2(loc) { 
+  self.name="main"; 
+  var w = window.open(loc,"win1","height=100,width=500,scrollbars,resizable"); 
+  w.focus(); 
+} 
+function open_window3(loc) { 
+  self.name="main"; 
+  var w = window.open(loc,"win1","height=400,width=450,scrollbars,resizable,top=200"); 
+  w.focus(); 
+} 
+function open_window4(loc) { 
+  self.name="main"; 
+  var w = window.open(loc,"win1","height=150,width=450,scrollbars,resizable,top=200"); 
+  w.focus(); 
+} 
+function open_window_ext(loc) { 
+  self.name="main"; 
+  var w = window.open(loc,"win2","height=500,width=500,scrollbars,resizable"); 
+  w.focus(); 
+} 
+function set_iframe_location(url,id) { 
+  eval('document.all.' + id).src = url; 
+} 
+function open_window_confirm(loc,frame) { 
+  self.name=frame; 
+  var w = window.open(loc,"win1","height=220,width=450,scrollbars,resizable"); 
+  w.focus(); 
+} 
+function delete_win1() { 
+  var w = window.open("","win1","height=220,width=450,scrollbars,resizable"); 
+  w.close(); 
+} 
+function open_window_ill(loc) { 
+  var w = window.open(loc,"win1","height=500,width=500,scrollbars,resizable"); 
+  w.focus(); 
+} 
+// --> 
+</script> 
+ 
+<script language="Javascript"> 
+<!-- 
+function select_record(theForm) { 
+  var imd = new Image(); 
+  if (theForm.ckbox.checked) 
+    var loc = "http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05897?func=short-select-single&" + theForm.name + "=on"; 
+  else 
+    var loc = "http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05898?func=short-deselect-one&" + theForm.name + "=off"; 
+  imd.src = loc; 
+} 
+// --> 
+</script> 
+ 
+<script src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/short-set-skc.js"></script> 
+<script type="text/javascript"> 
+<!-- 
+var query, query_parts, rank_words; 
+var rank_url = ''; 
+var k = 0; 
+ 
+query = 'Slova-Všechna pole= Nolč Vojta'; 
+query_parts = query.split(/ and | or /i); 
+for ( i=0; i<query_parts.length; i++ ) { 
+  query_parts[i] = query_parts[i].replace(/ not .*/,'').replace(/ \+.*/,''); 
+  if ( query_parts[i].indexOf('=')>0 && query_parts[i].match(/slova[^=]*=/i) == null ) continue; 
+  rank_words = query_parts[i].replace(/^[^=]+=\s*/,'').replace(/(\s|[!\^()_\-{}:";<>,.?\/|])+/,' ').split(' '); 
+  for ( j=0; j<rank_words.length; j++ ) { 
+    if ( rank_words[j].length<3 || k>=5 ) continue; 
+    k+=1; rank_url += '&W0' + k + '=' + encodeURIComponent(rank_words[j]) } 
+  if ( k>=5 ) break; 
+  } 
+if ( rank_url != '' ) { 
+  rank_url = 'http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05899?func=short-rank&action=RANK' + rank_url; 
+  if ( window.location.href.match(/=find-|=short-(refine|filter)/) &&         7 <      2500 ) 
+    if ( query.match(/^slova-vše/i) ) window.location.replace(rank_url) } 
+// --> 
+</script> 
+</head> 
+ 
+<body topmargin="0" onload="set_page(); window.focus();"> 
+ 
+<!-- filename: head-1-nobor  --> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"> 
+  <tbody><tr class="topbar"> 
+    <td rowspan="3" valign="middle" width="95"> 
+      <a href="http://www.caslin.cz/uvod/view?set_language=cs" target="new" title="SK ČR"> 
+      <img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/sk-logo.gif" alt="SK ČR" align="middle" border="0" width="95"></a></td> 
+    <td class="topbar" colspan="7" align="left" valign="middle"> 
+      &nbsp; Databáze Národní knihovny ČR 
+
+    </td> 
+    <td class="topbar" colspan="8" align="right" valign="middle"> 
+      Aktuální báze: &nbsp;SKC &nbsp; 
+    </td> 
+  </tr> 
+ 
+  <tr class="middlebar"> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05900?func=file&amp;file_name=logout" class="blue" title="Ukončení stávající relace"> 
+      Konec</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05901?func=bor-info" title="Zobrazení informací o vašem účtu v knihovně" class="blue"> 
+      Přihlášení</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05902?func=file&amp;file_name=base-list" class="blue" title="Volba databáze pro vyhledávání"> 
+      Databáze</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td><td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05903?func=file&amp;file_name=logbase" class="blue" title="Volba dílčí báze"> 
+      Dílčí báze</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05904?func=option-show&amp;func_param=DISPLAY-OPTION" class="blue" title="Nastavení vašich voleb pro zobrazení"> 
+      Nastavení</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05905?func=file&amp;file_name=feedback" class="blue" title="Zaslání připomínek k bázím a systému"> 
+      Otázky</a> 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="middlebar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05906?func=file&amp;file_name=help-1" class="blue" title="Nápověda k používání tohoto systému" target="new"> 
+      Nápověda</a> 
+    </td> 
+  </tr> 
+ 
+  <tr class="bottombar"> 
+    <td class="bottombar" colspan="3" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05907?func=file&amp;file_name=find-b" class="blue" title="Vyhledávání záznamů pomocí kombinace slov a prohlížením rejstříků"> 
+      Vyhledávání / Rejstříky</a> 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05908?func=short" class="blue" title="Zobrazení seznamu vyhledaných záznamů"> 
+      Výsledky dotazu</a> 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05909?func=history" class="blue" title="Použití výsledků předchozích vyhledávání"> 
+      Předchozí dotazy</a> 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05910?func=myshelf-short" class="blue" title="Zobrazení záznamů, které jste uložili do své schránky"> 
+      Schránka</a> 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05911?func=save-history-short" class="blue" title="Zobrazení dotazů, které jste uložili do historie"> Historie</a> 
+    </td> 
+    <td class="bottombar" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      | 
+    </td> 
+    <td class="bottombar" colspan="3" align="center" height="20" nowrap="nowrap" valign="middle"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05912?func=file&amp;file_name=find-b&amp;CON_LNG=ENG" title="English" onclick="this.href = window.location.href.replace(/#.*/,'').replace(/&amp;CON_LNG=.*/i,'') + '&amp;CON_LNG=ENG'"> 
+      <img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/eng.gif" align="absmiddle" border="1"></a> 
+    </td> 
+  </tr> 
+ 
+  <tr> 
+    <td class="feedbackbar" id="feedback" colspan="16" align="center" height="20" valign="middle"> 
+      &nbsp; 
+    </td> 
+  </tr> 
+  <tr> 
+    <td colspan="16" background="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-spacer.jpg" height="15" valign="middle"> </td> 
+  </tr> 
+</tbody></table> 
+ 
+<!-- short-include-buttons --> 
+<table border="0" cellspacing="0" width="100%"> 
+ <tbody><tr valign="baseline"> 
+  <td class="bar" align="center" nowrap="nowrap" width="15%"> 
+    &nbsp; 
+  </td> 
+  <!--td class="bar" id="small" align="right" nowrap> 
+    Vybrané záznamy: &nbsp; 
+
+  </td--> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05913?func=full-set-selected" title="Zobrazit vybrané záznamy" class="blue"> Zobrazit vybrané </a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      &nbsp;|&nbsp; 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05914?func=short-mail-0" title="Uložit/odeslat" class="blue"> Uložit/odeslat</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+            | 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05915?func=short-sub" title="Vytvořit podmnožinu" class="blue"> Vytvořit podmnožinu</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+            | 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05916?func=myshelf-add-sel-1" title="Přidat do schránky" class="blue"> 
+               Přidat do schránky</a> 
+  </td> 
+  <!--td class="bar" align="center" nowrap> 
+      &nbsp;|&nbsp; 
+  </td> 
+  <td class="bar" align="center" nowrap> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05917?func=save-server-1" 
+         title="Uložit na server" class="blue"> Uložit na server</a> 
+  </td--> 
+  <td class="bar" colspan="3" align="center" nowrap="nowrap" width="15%"> 
+    &nbsp; 
+  </td> 
+ </tr> 
+ <tr valign="baseline"> 
+  <td class="bar" align="center" nowrap="nowrap" width="15%"> 
+    &nbsp; 
+  </td> 
+  <!--td class="bar" id="small" align="right" nowrap> 
+    Celý soubor: &nbsp; 
+  </td--> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05918?func=short-select-all" title="Vybrat vše" class="blue"> Vybrat vše</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      &nbsp;|&nbsp; 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05919?func=short-deselect-all" title="Zrušit výběr" class="blue"> Zrušit výběr</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+            | 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05920?func=short-refine" title="Zpřesnit" class="blue"> Zpřesnit</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+            | 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05921?func=short-filter" title="Filtr" class="blue"> Filtrovat</a> 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+            | 
+  </td> 
+  <td class="bar" align="center" nowrap="nowrap"> 
+      <!--a href="javascript:if (rank_url!='') window.location.href=rank_url" --> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05922?func=short-rank" title="Ohodnotit záznamy podle výskytu hledaných slov" class="blue"> Ohodnotit</a> 
+  </td> 
+  <!--td class="bar" align="center" nowrap> 
+      &nbsp;|&nbsp; 
+  </td> 
+  <td class="bar" align="center" nowrap> 
+      <a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05923?func=short-sdi" 
+         title="SDI" class="blue"> 
+         Požadavek SDI</a> 
+  </td--> 
+  <td class="bar" align="center" nowrap="nowrap" width="15%"> 
+    &nbsp; 
+  </td> 
+ </tr> 
+</tbody></table> 
+ 
+<!-- short-include-2    --> 
+<p> 
+<table> 
+ <tbody><tr class="title" valign="top"> 
+  <td nowrap="nowrap" width="1%"> 
+    SKC -&nbsp; 
+  </td> 
+  <td id="title"> 
+    Výsledky dotazu: &nbsp;Slova-Všechna pole= Nolč Vojta <!--; &nbsp;řazeno podle:&nbsp; RANK--> 
+  <script type="text/javascript"> 
+    if ( 'řazeno podle:&nbsp; RANK'.indexOf('RANK') > 0 ) { 
+      sorted_by = "RANK"; 
+      document.write(' &nbsp;<span>(řazeno podle ohodnocení)</span>'); } 
+  </script> &nbsp;<span>(řazeno podle ohodnocení)</span> 
+  <div id="sort_options" style="display:none"><img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-small-dot.gif" alt="" border="0"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05924?func=short-sort&amp;set_number=019676&amp;sort_option=03---A01---D">Název/Rok(s)</a><img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-small-dot.gif" alt="" border="0"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05925?func=short-sort&amp;set_number=019676&amp;sort_option=01---D03---A">Rok(s)/Název</a><img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-small-dot.gif" alt="" border="0"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05926?func=short-sort&amp;set_number=019676&amp;sort_option=02---A03---A">Autor/Název</a><img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-small-dot.gif" alt="" border="0"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05927?func=short-sort&amp;set_number=019676&amp;sort_option=02---A01---D">Autor/Rok(s)</a><img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-small-dot.gif" alt="" border="0"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05928?func=short-sort&amp;set_number=019676&amp;sort_option=04---A01---D">Nakl./Rok(s)</a></div> 
+  </td> 
+</tr></tbody></table> 
+ 
+</p><p class="text1"> 
+Limit pro setřídění a zobrazení je <b>     2500</b> záznamů. </p> 
+ 
+<table border="0" width="100%"> 
+ <tbody><tr valign="top"> 
+  <td class="title" id="bold" nowrap="nowrap" width="25%"> 
+      Záznamy         1 -         7 z         7 
+  </td> 
+  <td align="center" nowrap="nowrap"> 
+     <img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-sort.gif" alt="Setřídit záznamy" border="0"> 
+   <select name="sort" onchange="if ( this.value=='RANK' ) { if ( rank_url!='' ) window.location.href=rank_url } else window.location.href='http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05929?func=short-sort&amp;set_number=' + set_no + '&amp;sort_option=' + this.value"> 
+          <option selected="selected" value=""></option> 
+          <option value="RANK">Relevance</option> 
+          <option value="01---D03---A">Rok vyd. (sest.) - Název</option> 
+          <option value="01---A03---A">Rok vyd. (vzest.) - Název</option> 
+          <option value="01---D02---A">Rok vyd. (sest.) - Autor</option> 
+          <option value="01---A02---A">Rok vyd. (vzest.) - Autor</option> 
+
+          <option value="02---A01---A">Autor (vzest.) - Rok vyd.</option> 
+          <option value="02---D01---A">Autor (sest.) - Rok vyd.</option> 
+          <option value="02---A03---A">Autor (vzest.) - Název</option> 
+          <option value="02---D03---A">Autor (sest.) - Název</option> 
+          <option value="03---A02---A">Název (vzest.) - Autor</option> 
+          <option value="03---D02---A">Název (sest.) - Autor</option> 
+   </select> 
+     &nbsp;&nbsp; 
+  </td> 
+  <td align="right" nowrap="nowrap" width="20%"> 
+       <form method="get" name="form_jumpText" style="margin-bottom:5pt" action="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05930"> 
+         <input name="func" value="short-jump-text" type="hidden"> 
+         <input name="action_short_jump_text" src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-find-text.gif" alt="Přejděte na položku rejstříku, začínající zadaným textem" border="0" type="image"> 
+         <input size="5" maxlength="5" name="jump_text" type="text"> &nbsp;&nbsp;&nbsp; 
+       </form> 
+  </td> 
+  <td align="left" nowrap="nowrap" width="5%"> 
+       <form method="get" name="form_jumpRecord" style="margin-bottom:5pt" action="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05931"> 
+         <input name="func" value="short-jump" type="hidden"> 
+         <input name="action_short_jump" src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-jump-to.gif" alt="Přechod na označený záznam v seznamu" border="0" type="image"> 
+         <input size="5" maxlength="5" name="jump" type="text"> &nbsp;&nbsp; 
+       </form> 
+  </td> 
+  <!--td align=right nowrap> <img src=http://aleph.nkp.cz/exlibris/aleph/u22_1/alephe/www_f_cze/icon/f-prev-page-dim.gif border=0 alt='No Previous Page'> <img src=http://aleph.nkp.cz/exlibris/aleph/u22_1/alephe/www_f_cze/icon/f-next-page-dim.gif border=0 alt='No Next Page'> </td--> 
+ </tr> 
+</tbody></table> 
+ 
+
+<!-- filename: short-a-head --> 
+<table id="short_table" border="0" cellspacing="2" width="100%"> 
+ <tbody><tr class="tr1"> 
+  <th class="text3">#</th> 
+  <th class="text3"><br></th> 
+  <th class="text3" colspan="2" width="40%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05932?func=short-sort&amp;set_number=019676&amp;sort_option=03---A01---D">Název</a></th> 
+  <th class="text3" width="15%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05933?func=short-sort&amp;set_number=019676&amp;sort_option=02---A03---A">Autor</a></th> 
+  <th class="text3" width="15%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05934?func=short-sort&amp;set_number=019676&amp;sort_option=04---A01---D">Nakladatel</a></th> 
+  <th class="text3" nowrap="nowrap" width="8%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05935?func=short-sort&amp;set_number=019676&amp;sort_option=01---D03---A">Rok vyd.</a></th> 
+  <th class="text3">Vlastník</th> 
+  <!--th class=text3>Země</th> 
+  <th class=text3>---</th> 
+  <th class=text3>---</th> 
+  <th class=text3></th --> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="1" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05936?func=full-set-set&amp;set_number=019676&amp;set_entry=000001&amp;format=999">1</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000001" method="GET"><label for="select_row000001" class="hidden"></label><input id="select_row000001" name="ckbox" checked="checked" onclick="javascript:select_record(this.form);" onkeypressed="" javascript:select_record(this.form);"="" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05936?func=full-set-set&amp;set_number=019676&amp;set_entry=000001&amp;format=999">Vojta Nolč : obrazy, grafika</a> / [text Arsén Pohribný ; výst. Galerie bratří Čapků, Praha VIII.1966]</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank("1000")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:100%; height:6.5pt; background-color:#B5CBE7"></div></div>100 % 
+  </td> 
+  <td class="td1">Galerie bratří Čapků (Praha, Česko) </td> 
+  <td class="td1">V Praze :&nbsp;Svaz československých výtvarných umělců, </td> 
+  <td class="td1" id="centered">[1966] </td> 
+  <td class="td1">ABE400 - OLE303 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none"><br> </td> 
+  <!--td class=td1 >1000 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="2" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05937?func=full-set-set&amp;set_number=019676&amp;set_entry=000002&amp;format=999">2</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000002" method="GET"><label for="select_row000002" class="hidden"></label><input id="select_row000002" name="ckbox" checked="checked" onclick="javascript:select_record(this.form);" onkeypressed="" javascript:select_record(this.form);"="" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05937?func=full-set-set&amp;set_number=019676&amp;set_entry=000002&amp;format=999">Vojta Nolč : [Alšova síň v Praze, 1964</a> / text Jarmila Skalická]</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank("1000")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:100%; height:6.5pt; background-color:#B5CBE7"></div></div>100 % 
+  </td> 
+  <td class="td1">Nolč, Vojta,&nbsp;1912-1989 </td> 
+  <td class="td1">V Praze :&nbsp;Český fond výtvarných umění, </td> 
+  <td class="td1" id="centered">1964 </td> 
+  <td class="td1">ABE310 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none"><br> </td> 
+  <!--td class=td1 >1000 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="3" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05938?func=full-set-set&amp;set_number=019676&amp;set_entry=000003&amp;format=999">3</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000003" method="GET"><label for="select_row000003" class="hidden"></label><input id="select_row000003" name="ckbox" checked="checked" onclick="javascript:select_record(this.form);" onkeypressed="" javascript:select_record(this.form);"="" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05938?func=full-set-set&amp;set_number=019676&amp;set_entry=000003&amp;format=999">Vojta Nolč</a> / [text Jarmila Skalická ; výst. Alšova síň v Praze 1964]</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank("1000")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:100%; height:6.5pt; background-color:#B5CBE7"></div></div>100 % 
+  </td> 
+  <td class="td1">Alšova síň (Praha) </td> 
+  <td class="td1">V Praze :&nbsp;Český fond výtvarných umění, </td> 
+  <td class="td1" id="centered">1964 </td> 
+  <td class="td1">ABE400 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none"><br> </td> 
+  <!--td class=td1 >1000 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="4" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05939?func=full-set-set&amp;set_number=019676&amp;set_entry=000004&amp;format=999">4</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000004" method="GET"><label for="select_row000004" class="hidden"></label><input id="select_row000004" name="ckbox" checked="checked" onclick="javascript:select_record(this.form);" onkeypressed="" javascript:select_record(this.form);"="" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05939?func=full-set-set&amp;set_number=019676&amp;set_entry=000004&amp;format=999">Vojta Nolč : obrazy, grafika</a> / Arsen Pohribný</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank(" 729")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:73%; height:6.5pt; background-color:#B5CBE7"></div></div>73 % 
+  </td> 
+  <td class="td1"><br> </td> 
+  <td class="td1">Praha :&nbsp;Svaz československých výtvarných umělců, </td> 
+  <td class="td1" id="centered">1966 </td> 
+  <td class="td1">BOE303 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none"><br> </td> 
+  <!--td class=td1 > 729 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="5" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05940?func=full-set-set&amp;set_number=019676&amp;set_entry=000005&amp;format=999">5</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000005" method="GET"><label for="select_row000005" class="hidden"></label><input id="select_row000005" name="ckbox" checked="checked" onclick="javascript:select_record(this.form);" onkeypressed="" javascript:select_record(this.form);"="" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05940?func=full-set-set&amp;set_number=019676&amp;set_entry=000005&amp;format=999">Vojta Nolč : monotypy a kresby 1954-1958</a> / [František Dvořák]</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank(" 729")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:73%; height:6.5pt; background-color:#B5CBE7"></div></div>73 % 
+  </td> 
+  <td class="td1"><br> </td> 
+  <td class="td1">Praha :&nbsp;[s.n.], </td> 
+  <td class="td1" id="centered">1959 </td> 
+  <td class="td1">BOE303 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none"><br> </td> 
+  <!--td class=td1 > 729 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="6" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05941?func=full-set-set&amp;set_number=019676&amp;set_entry=000006&amp;format=999">6</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000006" method="GET"><label for="select_row000006" class="hidden"></label><input id="select_row000006" name="ckbox" onclick="javascript:select_record(this.form);" onkeypressed="javascript:select_record(this.form);" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05941?func=full-set-set&amp;set_number=019676&amp;set_entry=000006&amp;format=999">Z nebe do pekla</a> / Radek Vohlmuth ; uspořádala Simona Martínková ; ilustrace Vojta Nolč</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank(" 270")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:27%; height:6.5pt; background-color:#B5CBE7"></div></div>27 % 
+  </td> 
+  <td class="td1">Vohlmuth, Radek </td> 
+  <td class="td1">České Budějovice :&nbsp;Velarium, </td> 
+  <td class="td1" id="centered">1996 </td> 
+  <td class="td1">BOA001 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none">NBN:boa001-000226147 </td> 
+  <!--td class=td1 > 270 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-body--> 
+ <tr id="7" valign="top"> 
+  <td class="td1" id="centered" width="1%"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05942?func=full-set-set&amp;set_number=019676&amp;set_entry=000007&amp;format=999">7</a> </td> 
+  <td class="td1" id="centered" width="1%"><form name="XXX000007" method="GET"><label for="select_row000007" class="hidden"></label><input id="select_row000007" name="ckbox" onclick="javascript:select_record(this.form);" onkeypressed="javascript:select_record(this.form);" type="checkbox"></form> </td> 
+  <td class="td1"><a href="http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05942?func=full-set-set&amp;set_number=019676&amp;set_entry=000007&amp;format=999">Z nebe do pekla</a> / Radek Wohlmuth ; [ilustrace Vojta Nolč]</td> 
+  <td class="td1" id="centered" style="font-size:6.5pt"> 
+    <script type="text/javascript">display_rank(" 270")</script><div style="margin-top:5px; margin-left:5px; margin-right:5px; width:30pt; height:6.5pt; border:1px solid; text-align:left; font-size:2pt"><div style="width:27%; height:6.5pt; background-color:#B5CBE7"></div></div>27 % 
+  </td> 
+  <td class="td1">Wohlmuth, Radek,&nbsp;1967- </td> 
+  <td class="td1">České Budějovice :&nbsp;Velarium, </td> 
+  <td class="td1" id="centered">1996 </td> 
+  <td class="td1">ABA001 - ABB060 - OLA001 </td> 
+  <!--td class=td1 >xr </td--> 
+  <td class="td1" style="display:none">ISBN:80-238-1579-2 </td> 
+  <!--td class=td1 > 270 </td> 
+  <td class=td1 > </td--> 
+ </tr> 
+
+<!-- filename: short-a-tail --> 
+</tbody></table> 
+
+<!-- filename: short-tail --> 
+ 
+<p align="right"> <img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-prev-page-dim.gif" alt="No Previous Page" border="0"> <img src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/f-next-page-dim.gif" alt="No Next Page" border="0"> 
+ 
+<script language="JavaScript" type="text/javascript"> 
+<!-- 
+function get_counter() { 
+var counter = document.createElement("img"); 
+var doc_ref = document.referrer.replace(/\/F\/[0-9A-Z-]+/,"/F/"); 
+counter.setAttribute("src","http://toplist.cz/count.asp?id=71405&http=" + escape(doc_ref) + "&wi="+escape(window.screen.width) + "&he="+escape(window.screen.height) + "&t="+escape(document.title)); 
+counter.setAttribute("width","1"); counter.setAttribute("height","1"); 
+counter.setAttribute("border","0"); 
+document.body.insertBefore(counter,document.getElementById("copyright")); 
+} 
+//--> 
+</script> 
+<noscript> 
+<img src="http://www.toplist.cz/dot.asp?id=71405" alt="TOPlist" border="0" width="1" height="1"/> 
+</noscript> 
+ 
+ 
+<!-- filename: copyrights --> 
+<br> 
+</p><img class="azrncvbqksanqvyafalh" src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/count.gif" border="0" height="1" width="1"><div id="copyright" class="copyright"> © 2014 <a href='javascript:%20window.open("http://aleph.nkp.cz/F/KSKXNBYNDKXSLS8P6KMKIG7QCX4D42BGCD6KL6SI46G8XRLP2D-05943?func=file&amp;file_name=copyrights-info","copy","height=500,width=500,scrollbars");%20void%20null'>Ex Libris, NK ČR</a></div> 
+<br> 
+ 
+ 
+
+ <script src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/books" type="text/javascript"></script><script src="SKC%20-%20V%C3%BDsledky%20vyhled%C3%A1v%C3%A1n%C3%AD_files/books.js" type="text/javascript"></script></body></html>

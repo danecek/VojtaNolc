@@ -1,0 +1,207 @@
+X-Original-To: <danecek@imap.fit.cvut.cz>
+Return-Path: <apache@pipni.cz>
+Received: from relay.fit.cvut.cz (relay.fit.cvut.cz [IPv6:2001:718:2:2901:0:0:0:237])
+	by imap.fit.cvut.cz (8.15.2/8.15.2) with ESMTP id t7DD8DA3031009
+	for <danecek@imap.fit.cvut.cz>; Thu, 13 Aug 2015 15:08:13 +0200 (CEST)
+	(envelope-from apache@pipni.cz)
+Received: from pipni.cz (ns.pipni.cz [93.185.104.4])
+	by relay.fit.cvut.cz (8.15.2/8.15.2) with ESMTP id t7DD7tGx034082
+	for <danecek@fit.cvut.cz>; Thu, 13 Aug 2015 15:07:56 +0200 (CEST)
+	(envelope-from apache@pipni.cz)
+X-Authentication-Warning: relay.fit.cvut.cz: Host ns.pipni.cz [93.185.104.4] claimed to be pipni.cz
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=pipni.cz; s=dkim;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:From:Date:Subject:To; bh=H6gPr+GusBUOjBo9WzkcAivjtyUnLs+kNZDaH6AJW4U=;
+	b=DnR3YRdte8b31dfp6Vb3XL3SvzS2rGi4yH57AoWRv73j/xirjWxpxjWtyRyQsNNJZZClkQF8QqvtEWvCFvY6jdETL1nGVcHCTFZEgqfIaXQu8GFWuFs3SYEJMGsKvdbj91btnqExzPmk3aR8f9PXMgQMwkZEsqcKyYvALip2OOo=;
+Received: id 1ZPre3-0001pi-RH
+	for danecek@fit.cvut.cz; Thu, 13 Aug 2015 14:30:07 +0200
+To: danecek@fit.cvut.cz
+Subject: Registrace hostingu / Hosting registration - vojtanolc.cz (209572)
+X-PHP-Script: web.pipni.cz/registrace.php for 46.135.17.249
+X-PHP-Originating-Script: 99:class.phpmailer.php
+Date: Thu, 13 Aug 2015 14:30:07 +0200
+From: "PIPNI s.r.o." <pipni@pipni.cz>
+Message-ID: <177a5dacccc863826da4b76504bc00fd@web.pipni.cz>
+X-Priority: 3
+X-Mailer: PHPMailer [version 1.73]
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+X-FIT-MailScanner-ID: t7DD7tGx034082
+X-FIT-MailScanner: Found to be clean
+X-FIT-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
+	score=-0.005, required 7, autolearn=not spam, FREEMAIL_FROM 0.00,
+	RP_MATCHES_RCVD -0.01)
+X-FIT-MailScanner-From: apache@pipni.cz
+X-FIT-MailScanner-Watermark: 1440076078.17521@GYHJmgG9lnFBBh3JIXUtcA
+X-Spam-Status: No
+
+Vážený kliente,
+ 
+  děkujeme Vám za objednávku našich služeb. Vaše objednávka byla vyřízena a v tomto e-mailu Vám zasíláme přístupové údaje a popis nastavení služeb.
+
+
+Zvolené služby :
+
+Doména : vojtanolc.cz
+Doména období: 2 roky
+
+Program : FREE
+Program období: 2 roky
+SSL : bez SSL cerifikátu
+
+Jazyk : Čeština 
+Měna : Česká koruna
+
+Důležitá nastavení :
+
+Web : http://vojtanolc.cz nebo http://www.vojtanolc.cz
+HTTPS : https://vojtanolc.cz nebo https://www.vojtanolc.cz
+HomeDir : /DISK2/WWW/vojtanolc.cz
+PHP : .php, .php3, .php4, .inc a .phtml
+ASP : .asp
+JSP : .jsp, .jhtml a .do
+Servlety : /servlet
+Aktivaci ASP a JSP skriptů je nutné nastvit v administraci domény.
+
+Administrace : https://admin.pipni.cz
+Login : vojtanolc.cz
+Heslo : NTIttaZ4
+  
+FTP Server : ftp.vojtanolc.cz
+WebFTP : http://webftp.pipni.cz
+FTP Login : vojtanolc.cz
+FTP Heslo : NTIttaZ4
+Vytvořením adresáře v root adresáři založíte novou poddoménu. Možnost využití SSL protokolu FTPS (port 21).
+Readonly FTP účet s denní zálohou webu a databází/logu: backup.pipni.cz a backup2.pipni.cz (login a heslo stejné jako do administrace)
+
+Statistiky : http://stats.pipni.cz
+Login : vojtanolc.cz
+Heslo : NTIttaZ4
+Heslo si můžete změnit v administraci dómeny.
+
+WebMail : http://mail.vojtanolc.cz
+POP3 Server : mail.vojtanolc.cz
+IMAP Server : mail.vojtanolc.cz
+SMTP Server : mail.vojtanolc.cz
+Login : jméno@vojtanolc.cz
+Možnost využítí SSL protokolů - POP3S (port 995), SMTPS (port 25) a IMAPS (port 993).
+Jednotlivé emailové schránky si vytvořte nejdříve v administraci domény.
+
+MySQL Hostname : mysql
+MySQL Databáze : vojtanolc_cz nebo název_vojtanolc_cz
+MySQL Login : vojtanolc.cz nebo název.vojtanolc.cz
+MySQL WebAdmin : http://mysql.pipni.cz
+Postgres Hostname : pgsql
+Postgres Databáze : název.vojtanolc.cz
+Postgres Login : název.vojtanolc.cz
+Postgres WebAdmin : http://pgsql.pipni.cz
+FireBird Hostname : fbsql
+FireBird Databáze : název.vojtanolc.cz
+FireBird Login : název.vojtanolc.cz
+FireBird WebAdmin : http://fbsql.pipni.cz
+Jednotlivé databáze si vytvořte nejdříve v administraci domény.
+
+Soubor 404 NotFound : /poddoména/404.phtml
+Soubor 403 AccessDenied : /poddoména/403.phtml
+Soubor 401 Unauthorized : /poddoména/401.phtml
+Soubor 406 MethodNotAcceptable : /poddoména/406.phtml
+Soubor 500 ServerError : /poddoména/500.phtml
+
+Podpora : http://support.pipni.cz
+Fórum : http://forum.pipni.cz
+Monitoring : http://monitoring.pipni.cz
+
+DNS servery : ns.pipni.cz, ns2.pipni.cz, ns3.pipni.cz
+NSset pro české domény je NSPIPNI.
+
+Budeme velmi rádi, když naše služby doporučíte Vašim přátelům.
+
+--------------------------------------------------------------
+
+Dear customer,
+	
+  thank you for your order of our services. Your order has been carried out and we are sending you in this e-mail your access data and the description of our offered services.
+
+
+Ordered services :
+
+Domain : vojtanolc.cz
+Domain period: 2 roky
+
+Program : FREE
+Program period : 2 roky
+SSL : bez SSL cerifikátu
+
+Language : Čeština 
+Currency : Česká koruna
+
+Important settings :
+
+Web : http://vojtanolc.cz nebo http://www.vojtanolc.cz
+HTTPS : https://vojtanolc.cz nebo https://www.vojtanolc.cz
+HomeDir : /DISK2/WWW/vojtanolc.cz
+PHP : .php, .php3, .php4, .inc a .phtml
+ASP : .asp
+JSP : .jsp, .jhtml a .do
+Servlets : /servlet
+It is necessary to set up the activation of ASP and JSP scripts at the domain administration.
+
+Administration : https://admin.pipni.cz
+Login : vojtanolc.cz
+Password : NTIttaZ4
+
+FTP Server : ftp.vojtanolc.cz
+WebFTP : http://webftp.pipni.cz
+FTP Login : vojtanolc.cz
+FTP Password : NTIttaZ4
+Readonly FTP account with a daily web back-up and data base: backup.pipni.cz (login and password the same as into the administration)
+You will establish a new subdomain by creating a directory in the root directory. The possibility to use an FTPS SSL protocol (port 21).
+
+Statistics : http://stats.pipni.cz
+Login : vojtanolc.cz
+Password : NTIttaZ4
+You can change password in domain administration.
+
+WebMail : http://mail.vojtanolc.cz
+POP3 Server : mail.vojtanolc.cz
+IMAP Server : mail.vojtanolc.cz
+SMTP Server : mail.vojtanolc.cz
+Login : name@vojtanolc.cz
+The possibility to use SSL protocols - POP3S (port 995), SMTPS (port 25) and IMAPS (port 993).
+Create individual e-mail mailboxes in the domain administration first.
+
+MySQL Hostname : mysql
+MySQL Database : vojtanolc_cz or name_vojtanolc_cz
+MySQL Login : vojtanolc.cz nebo name.vojtanolc.cz
+MySQL WebAdmin : http://mysql.pipni.cz
+Postgres Hostname : pgsql
+Postgres Database : name.vojtanolc.cz
+Postgres Login : name.vojtanolc.cz
+Postgres WebAdmin : http://pgsql.pipni.cz
+FireBird Hostname : fbsql
+FireBird Database : name.vojtanolc.cz
+FireBird Login : name.vojtanolc.cz
+FireBird WebAdmin : http://fbsql.pipni.cz
+Create individual databases in the domain administration first.
+
+File 404 NotFound : /subdomain/404.phtml
+File 403 AccessDenied : /subdomain/403.phtml
+File 401 Unauthorized : /subdomain/401.phtml
+File 406 MethodNotAcceptable : /subdomain/406.phtml
+File 500 ServerError : /subdomain/500.phtml
+
+Support : http://support.pipni.cz
+Forum : http://forum.pipni.cz
+Monitoring : http://monitoring.pipni.cz
+
+DNS servers : ns.pipni.cz, ns2.pipni.cz, ns3.pipni.cz
+Idtech for Czech domain is NSPIPNI.
+
+We would be very pleased if you recommended our service to your business partners and friends.
+
+
+PIPNI s.r.o.
+
+E-mail : pipni@pipni.cz
+URL : http://pipni.cz
+
