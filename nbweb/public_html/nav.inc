@@ -20,11 +20,12 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Texty
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" >
-                        <li><a href="vzpominka.phtml">Vzpomínka</a></li>
                         <li><a href="alsovasin.phtml">Alšova síň 1964</a></li>
                         <li><a href="galeriebratricapku.phtml">Galerie bratří Čapků 1966</a></li>
                         <li><a href="pozapomenutymalir.phtml">Pozapomenutý malíř 1996</a></li>
                         <li><a href="umenijeabstrakce.phtml">Umění je abstrakce 2003</a></li>
+                        <li><a href="rokyvednech.phtml">Roky ve dnech 2010</a></li>
+                        <li><a href="vzpominka.phtml">Vzpomínka 2015</a></li>
                     </ul>
                 </li>    
                 <li <?php echo $_SERVER['PHP_SELF'] === '/kontakt.phtml' ? 'class="active"' : ''; ?> >
